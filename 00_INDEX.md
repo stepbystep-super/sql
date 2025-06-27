@@ -24,14 +24,14 @@
 | 018  | Employee Names                 | ✔️ 已掌握         | ❌       |                                        |
 | 019  | Employee Salaries              | ✔️ 已掌握         | ❌       |                                        |
 | 020 |The Blunder               |  CEIL(), TRIM(), DOUBLE,VARCHAR    |    ✅       |                                       |
-📝 备注：以上为基础 SELECT 类题，全部已掌握，无需记录。
+
 
 ---
 
 ## Intermediate
 
 | 题号 | 题名 | 状态 | 是否记录 | 备注 |
-| ---- | ---- | ---- | -------- | ---- |
-| 005  |      |      |          |      |
+| 001 |The PADS| ||, COUNT(*) GROUP BY VS COUNT(*) OVER()|   ✅    | ---- |
+|   |      |      |          |      |
 
 
