@@ -30,9 +30,11 @@
 
 ## Intermediate
 
-| 题号 | 题名                        | 状态                                                                                             | 是否记录 | 备注 |
-| 0--1 | T-------------------------S | 连----------------------------------------------------------------------------------------------) | ✅------✅ | u--- |
-| 001  | The padS                    | 连接符号, COUNT(*) GROUP BY VS COUNT(*) OVER()                                                   | ✅       |      |
-| 002  | Pivot the Occupations Table | max () group by; coalesce(); case when..then..end;row_number() over(partition by ...order by...) |  ✅  |      |
-
+| 题号 | 题名 | 状态   | 是否记录 | 
+| 0--1 | T-----S | 连----------) | ✅------✅ |
+| 001  | The padS | 连接符号, COUNT(*) GROUP BY VS COUNT(*) OVER()   | ✅       |
+| 002  | Pivot the Occupations Table | max () group by; coalesce(); 
+case when..then..end;row_number()
+over(partition by ...order by...) | ✅       |
+| 003  | pivot 二叉树 |case when 1 then 1 when 2 then 2 else 3 end     |     ✅      |
 
