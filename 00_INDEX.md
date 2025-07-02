@@ -30,11 +30,13 @@
 
 ## Intermediate
 
-| 题号 | 题名 | 状态   | 是否记录 | 
-| 0--1 | T-----S | 连----------) | ✅------✅ |
-| 001  | The padS | 连接符号, COUNT(*) GROUP BY VS COUNT(*) OVER()   | ✅       |
-| 002  | Pivot the Occupations Table | max () group by; coalesce(); 
-case when..then..end;row_number()
-over(partition by ...order by...) | ✅       |
-| 003  | pivot 二叉树 |case when 1 then 1 when 2 then 2 else 3 end     |     ✅      |
+## 🧠 Intermediate SQL 错题记录
+
+| 题号  | 题名                          | 涉及知识点                                                               | 是否记录 |
+|-------|-------------------------------|--------------------------------------------------------------------------|----------|
+| 000-1 | The PADS                      | 字符拼接 `||`，`COUNT(*) GROUP BY` vs `COUNT(*) OVER()`                  | ✅        |
+| 001   | Pivot the Occupations Table  | `MAX()` + `GROUP BY`，`COALESCE()`，`CASE WHEN`，`ROW_NUMBER()` + `OVER` | ✅        |
+| 002   | Pivot 二叉树节点类型         | 多层 `CASE WHEN` 判断 root / inner / leaf                               | ✅        |
+| 003   | LEFT JOIN 公司架构统计       | 多表连接，`COUNT(DISTINCT ...)` + `GROUP BY`，注意 `company_code` 拼写 | ✅        |
+
 
