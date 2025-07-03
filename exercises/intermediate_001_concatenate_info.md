@@ -148,3 +148,51 @@ GROUP BY Occupation;
 | Singer     | 1         |
 
 ✔️ 只返回聚合后的结果，适合展示“每个职业有多少人”
+
+
+这个问题非常好！你提到的 SQL：
+
+```sql
+
+SELECT 'There are a total of ' || COUNT(*) AS occurencies ||
+       ' ' || LOWER(Occupation) || 's.'
+FROM OCCUPATIONS
+GROUP BY Occupation
+ORDER BY occurencies;
+```
+看起来像只有一点小问题，但其实是两个 经典语法陷阱叠加，我们来逐个拆解：
+
+❌ 错误 1:
+
+SQL 不允许你在 || 表达式中间插入 AS。别名 AS occurencies 只能放在 整条表达式的末尾：
+
+❌ 错误 2：
+
+```sql
+
+SELECT 'There are a total of ' || COUNT(*) || ' ' || LOWER(Occupation) || 's.' AS occurencies
+FROM OCCUPATIONS
+GROUP BY Occupation
+ORDER BY occurencies;
+```
+仍然可能报错（尤其在 DB2）！
+
+在 DB2（以及部分 SQL 实现）中，在 ORDER BY 中不能直接引用别名，尤其当这个别名本身是由表达式构成的。
+
+✅ 推荐的做法是：
+直接用表达式排序：
+
+```sql
+ORDER BY COUNT(*), Occupation;
+
+或者用子查询包装：
+
+
+SELECT * FROM (
+    SELECT 'There are a total of ' || COUNT(*) || ' ' || LOWER(Occupation) || 's.' AS occurencies,
+           COUNT(*) AS count_val, Occupation
+    FROM OCCUPATIONS
+    GROUP BY Occupation
+) AS t
+ORDER BY count_val, Occupation;
+
